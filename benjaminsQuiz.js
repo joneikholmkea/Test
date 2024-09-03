@@ -94,7 +94,6 @@ document.querySelector("button.next-guess").addEventListener("click", () => {
 });
 
 document.querySelector("#view-student").addEventListener("click", () => {
-  console.log("listener view-student...")
   practice();
 });
 
@@ -107,7 +106,6 @@ function showResult() {
 }
 
 function practice(){
-  console.log("Practice pressed")
   const randomStudent = getRandomStudentId();
   showStudent(randomStudent, true);
   studentNameInput.value = "";
