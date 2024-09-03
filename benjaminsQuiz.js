@@ -70,7 +70,7 @@ dataListConstructorString += "</datalist>";
 
 div.innerHTML = `
         <div class="view-student-name" style="font-size: 1.5rem; height: 40px;"> </div>
-        <button class="view-student" style="padding: 5px; border: none; margin-bottom: 24px;">Practice</button>
+        <button id="view-student" style="padding: 5px; border: none; margin-bottom: 24px; z-index:1000">Practice</button>
         <div></div>
         <span style="font-size: 2rem; margin-bottom: 12px;">Benjamin's students quiz</span>
         <div>
@@ -93,7 +93,8 @@ document.querySelector("button.next-guess").addEventListener("click", () => {
   showNewStudent();
 });
 
-document.querySelector("button.view-student").addEventListener("click", () => {
+document.querySelector("#view-student").addEventListener("click", () => {
+  console.log("listener view-student...")
   practice();
 });
 
@@ -106,6 +107,7 @@ function showResult() {
 }
 
 function practice(){
+  console.log("Practice pressed")
   const randomStudent = getRandomStudentId();
   showStudent(randomStudent, true);
   studentNameInput.value = "";
